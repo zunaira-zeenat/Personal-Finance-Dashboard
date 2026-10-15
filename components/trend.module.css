@@ -1,0 +1,183 @@
+.trendCard {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+  height: 100%;
+}
+
+.trendCard:hover {
+  border-color: rgba(20, 184, 166, 0.25);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.titleArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.chartTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.chartSubtitle {
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+}
+
+.legendArea {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.legendIndicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.svgContainer {
+  width: 100%;
+  position: relative;
+  flex: 1;
+  min-height: 230px;
+}
+
+.chartSvg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.gridLine {
+  stroke: rgba(255, 255, 255, 0.05);
+  stroke-dasharray: 4 4;
+  stroke-width: 1;
+}
+
+.axisText {
+  fill: var(--text-muted);
+  font-size: 10px;
+  font-family: var(--font-main);
+  font-variant-numeric: tabular-nums;
+}
+
+.barIncome {
+  fill: var(--income-green);
+  transition: opacity var(--transition-fast), fill var(--transition-fast);
+  cursor: pointer;
+}
+
+.barExpense {
+  fill: var(--expense-rose);
+  transition: opacity var(--transition-fast), fill var(--transition-fast);
+  cursor: pointer;
+}
+
+.barIncome:hover,
+.barExpense:hover {
+  opacity: 0.85;
+}
+
+.monthLabel {
+  fill: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  text-anchor: middle;
+  font-family: var(--font-main);
+}
+
+/* Tooltip card */
+.tooltipCard {
+  margin-top: 0.75rem;
+  padding: 0.65rem 0.95rem;
+  background: rgba(10, 17, 30, 0.9);
+  border: 1px solid var(--accent-teal-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.775rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.tooltipMonthName {
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tooltipStats {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.statValue {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .trendCard {
+    padding: 1.25rem;
+  }
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tooltipCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+  .tooltipStats {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
